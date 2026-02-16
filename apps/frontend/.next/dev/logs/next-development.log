@@ -1,0 +1,101 @@
+[00:00:02.549] Server  LOG     ✓ Ready in 1875ms
+[00:00:08.897] Server  ERROR   ⨯ ./apps/frontend/src/app/globals.css:722:8
+Parsing CSS source code failed
+  720 |   }
+  721 | }
+> 722 | @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+      |        ^
+  723 | :root {
+  724 |   --background: #F5EFE0;
+  725 |   --foreground: #4A2E1A;
+
+@import rules must precede all rules aside from @charset and @layer statements
+
+Import trace:
+  Client Component Browser:
+    ./apps/frontend/src/app/globals.css [Client Component Browser]
+    ./apps/frontend/src/app/layout.tsx [Server Component]
+
+
+
+./apps/frontend/src/app
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:00:10.315] Browser ERROR   uncaughtError: Error: ./apps/frontend/src/app/globals.css:722:8
+Parsing CSS source code failed
+  720 |   }
+  721 | }
+> 722 | @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+      |        ^
+  723 | :root {
+  724 |   --background: #F5EFE0;
+  725 |   --foreground: #4A2E1A;
+
+@import rules must precede all rules aside from @charset and @layer statements
+
+Import trace:
+  Client Component Browser:
+    ./apps/frontend/src/app/globals.css [Client Component Browser]
+    ./apps/frontend/src/app/layout.tsx [Server Component]
+
+
+[00:00:11.013] Browser ERROR   ./apps/frontend/src/app/globals.css:722:8
+Parsing CSS source code failed
+  720 |   }
+  721 | }
+> 722 | @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+      |        ^
+  723 | :root {
+  724 |   --background: #F5EFE0;
+  725 |   --foreground: #4A2E1A;
+
+@import rules must precede all rules aside from @charset and @layer statements
+
+Import trace:
+  Client Component Browser:
+    ./apps/frontend/src/app/globals.css [Client Component Browser]
+    ./apps/frontend/src/app/layout.tsx [Server Component]
+[00:00:11.013] Browser ERROR   ./apps/frontend/src/app
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:02:33.719] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:35.185] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/fron...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         crxemulator=""
+                        >
+                  ...
+
+[00:02:46.050] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
