@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: 'Outfit', var(--font-geist-sans);
+  
+  --color-primary-main: #4A2E1A;
+  --color-accent-main: #E8643A;
+  --color-bg-main: #F5EFE0;
+  
+  --color-primary-light: #6D4C3A;
+  --color-primary-dark: #2D1A0D;
+  
+  --color-accent-light: #F28C6E;
+  --color-accent-dark: #B64320;
+}
+
+:root {
+  --background: #F5EFE0;
+  --foreground: #4A2E1A;
+  --primary: #4A2E1A;
+  --accent: #E8643A;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2D1A0D;
+    --foreground: #F5EFE0;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom transitions */
+.transition-standard {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
